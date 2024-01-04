@@ -7,5 +7,13 @@ public class Converter {
         double kilometers = milesToKilometers(miles);
         System.out.println(miles + " миль = " + kilometers + " кілометрів");
     }
+    public static double kilometersToMiles(double kilometers) {
+        return kilometers / 1.60934;
+    }
+
+    public static void printKilometersToMiles(double kilometers) {
+        double miles = kilometersToMiles(kilometers);
+        System.out.println(kilometers + " кілометрів = " + miles + " миль");
+    }
 
 }
