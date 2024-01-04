@@ -2,6 +2,30 @@ import java.util.Scanner;
 
 public class Converter {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Введення від користувача
+        System.out.print("Введіть відстань: ");
+        double distance = scanner.nextDouble();
+
+        // Вибір одиниць вимірювання
+        System.out.print("Оберіть одиниці вимірювання ('mi' для миль, 'km' для кілометрів): ");
+        String unit = scanner.next();
+
+        // Виклик методів конвертації та виведення результату
+        if ("mi".equalsIgnoreCase(unit)) {
+            printMilesToKilometers(distance);
+        } else if ("km".equalsIgnoreCase(unit)) {
+            printKilometersToMiles(distance);
+        } else {
+            System.out.println("Неправильний вибір одиниць вимірювання.");
+        }
+
+        // Закриття сканера
+        scanner.close();
+    }
+
     // метод конвертації миль в кілометри
     public static double milesToKilometers(double miles) {
         return miles * 1.60934;
